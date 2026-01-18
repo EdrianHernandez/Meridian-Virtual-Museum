@@ -1,14 +1,7 @@
 import React from 'react';
-import { Room } from '../types';
 import { Map } from 'lucide-react';
 
-interface TourNavigationProps {
-  rooms: Room[];
-  currentRoomId: string;
-  onRoomSelect: (roomId: string) => void;
-}
-
-const TourNavigation: React.FC<TourNavigationProps> = ({ rooms, currentRoomId, onRoomSelect }) => {
+const TourNavigation = ({ rooms, currentRoomId, onRoomSelect }) => {
   return (
     <div className="fixed top-6 right-6 z-50 flex flex-col items-end gap-2 group">
       {/* Toggle / Title Badge */}
