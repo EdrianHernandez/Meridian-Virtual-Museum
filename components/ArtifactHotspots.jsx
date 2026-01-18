@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { Info, X, ExternalLink } from 'lucide-react';
-import { Room, Artifact } from '../types';
 
-interface ArtifactHotspotsProps {
-  room: Room;
-}
+const ArtifactHotspots = ({ room }) => {
+  const [activeArtifact, setActiveArtifact] = useState(null);
 
-const ArtifactHotspots: React.FC<ArtifactHotspotsProps> = ({ room }) => {
-  const [activeArtifact, setActiveArtifact] = useState<Artifact | null>(null);
-
-  const handleHotspotClick = (artifact: Artifact) => {
+  const handleHotspotClick = (artifact) => {
     setActiveArtifact(artifact);
   };
 
