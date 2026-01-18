@@ -1,6 +1,4 @@
-import { Room } from './types';
-
-export const MUSEUM_ROOMS: Room[] = [
+export const MUSEUM_ROOMS = [
   {
     id: 'hall-of-antiquity',
     name: 'Hall of Antiquity',
