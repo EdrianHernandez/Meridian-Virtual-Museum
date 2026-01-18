@@ -6,7 +6,7 @@ import ArtifactHotspots from './components/ArtifactHotspots';
 import TourNavigation from './components/TourNavigation';
 import { ChevronRight } from 'lucide-react';
 
-const App: React.FC = () => {
+const App = () => {
   const [hasStarted, setHasStarted] = useState(false);
   const [currentRoomId, setCurrentRoomId] = useState(MUSEUM_ROOMS[0].id);
 
@@ -16,7 +16,7 @@ const App: React.FC = () => {
     setHasStarted(true);
   };
 
-  const handleRoomSelect = (roomId: string) => {
+  const handleRoomSelect = (roomId) => {
     setCurrentRoomId(roomId);
   };
 
