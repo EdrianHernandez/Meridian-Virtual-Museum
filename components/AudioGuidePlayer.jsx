@@ -1,19 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, Volume2, SkipBack, SkipForward } from 'lucide-react';
-import { Room } from '../types';
 
-interface AudioGuidePlayerProps {
-  currentRoom: Room;
-}
-
-const AudioGuidePlayer: React.FC<AudioGuidePlayerProps> = ({ currentRoom }) => {
+const AudioGuidePlayer = ({ currentRoom }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0); // 0 to 100
   const [currentTime, setCurrentTime] = useState(0);
   const duration = currentRoom.audioDuration;
   
   // Mock audio interval
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef(null);
 
   useEffect(() => {
     // Reset when room changes
@@ -49,7 +44,7 @@ const AudioGuidePlayer: React.FC<AudioGuidePlayerProps> = ({ currentRoom }) => {
 
   const togglePlay = () => setIsPlaying(!isPlaying);
 
-  const formatTime = (seconds: number) => {
+  const formatTime = (seconds) => {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
     return `${m}:${s < 10 ? '0' : ''}${s}`;
