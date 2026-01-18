@@ -1,11 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-interface ExhibitionHeroProps {
-  onStart: () => void;
-}
-
-const ExhibitionHero: React.FC<ExhibitionHeroProps> = ({ onStart }) => {
+const ExhibitionHero = ({ onStart }) => {
   return (
     <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
       {/* Background Image with Parallax-like Zoom Effect */}
